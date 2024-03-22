@@ -12,6 +12,6 @@ public class Utils {
     }
 
     public void sendMessage(CommandSender sender, String message) {
-        sender.sendMessage(formatMM(String.format("<grey>[<bold><dark_aqua>P</dark_aqua><aqua>P</aqua></bold>]<white> %s", message)));
+        sender.sendMessage(formatMM(String.format("<grey>[<bold><dark_purple>PP</bold>]<white> %s", message)));
     }
 }
