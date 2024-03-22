@@ -21,35 +21,19 @@ public class CommandPP implements CommandExecutor {
     }
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String s, @NotNull String[] args) {
-        Utils Utils = new Utils();
         if(args.length < 3) return false;
 
         String type = args[0].toLowerCase(); // "user" or "group"
         String target = args[1]; // the user or group in question
         String matchedPermission = args[2]; // partial permission match to remove all of.
 
+        Utils Utils = new Utils();
         switch (type){
             case "user":
-                Player player = Bukkit.getPlayer(target);
-
-                if(player == null){
-                    sender.sendMessage(Utils.formatMM(String.format("<dark_red>Error: <red>Unknown Player \"%s\"", target)));
-                    return true;
-                }
-
-                User user = luckPerms.getPlayerAdapter(Player.class).getUser(player);
-                int nodeCount = 0;
-                for (Node node : user.getNodes(NodeType.PERMISSION)){
-                    if (node instanceof PermissionNode && node.getKey().startsWith(matchedPermission)){
-                        user.data().remove(node);
-                        nodeCount++;
-                        luckPerms.getUserManager().saveUser(user);
-                    }
-                }
-                sender.sendMessage(Utils.formatMM(String.format("removed %s nodes from %s matching \"%s\"", nodeCount, user.getUsername(), matchedPermission)));
+                purgeUser(target, matchedPermission, sender);
                 break;
             case "group":
-                sender.sendMessage("I didn't do this yet. 😁😁");
+                purgeGroup(target, matchedPermission, sender);
                 break;
             default:
                 sender.sendMessage(Utils.formatMM(String.format("<dark_red>Error: <red>Unknown type \"%s\"", type)));
@@ -57,5 +41,30 @@ public class CommandPP implements CommandExecutor {
         }
 
         return true;
+    }
+
+    private void purgeUser(String target, String matchedPermission, CommandSender sender){
+        Utils Utils = new Utils();
+        Player player = Bukkit.getPlayer(target);
+
+        if(player == null){
+            sender.sendMessage(Utils.formatMM(String.format("<dark_red>Error: <red>Unknown Player \"%s\"", target)));
+        }
+
+        User user = luckPerms.getPlayerAdapter(Player.class).getUser(player);
+        int nodeCount = 0;
+        for (Node node : user.getNodes(NodeType.PERMISSION)){
+            if (node instanceof PermissionNode && node.getKey().startsWith(matchedPermission)){
+                user.data().remove(node);
+                nodeCount++;
+                luckPerms.getUserManager().saveUser(user);
+            }
+        }
+        sender.sendMessage(Utils.formatMM(String.format("removed %s nodes from %s matching \"%s\"", nodeCount, user.getUsername(), matchedPermission)));
+    }
+
+    private void purgeGroup(String target, String matchedPermission, CommandSender sender){
+        Utils Utils = new Utils();
+        sender.sendMessage("I didn't do this yet. 😁😁");
     }
 }
