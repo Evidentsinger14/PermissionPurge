@@ -2,6 +2,7 @@ package dev.ev1dent.permissionpurge.commands;
 
 import dev.ev1dent.permissionpurge.utilities.Utils;
 import net.luckperms.api.LuckPerms;
+import net.luckperms.api.model.group.Group;
 import net.luckperms.api.model.user.User;
 import net.luckperms.api.node.Node;
 import net.luckperms.api.node.NodeType;
@@ -66,6 +67,21 @@ public class CommandPP implements CommandExecutor {
 
     private void purgeGroup(String target, String matchedPermission, CommandSender sender){
         Utils Utils = new Utils();
-        sender.sendMessage("I didn't do this yet. 😁😁");
+        Group group = luckPerms.getGroupManager().getGroup(target);
+
+        if(group == null){
+            sender.sendMessage(Utils.formatMM(String.format("<dark_red>Error: <red>Unknown Group \"%s\"", target)));
+            return;
+        }
+
+        int nodeCount = 0;
+        for (Node node : group.getNodes(NodeType.PERMISSION)){
+            if (node instanceof PermissionNode && node.getKey().startsWith(matchedPermission)){
+                group.data().remove(node);
+                nodeCount++;
+                luckPerms.getGroupManager().saveGroup(group);
+            }
+        }
+        sender.sendMessage(Utils.formatMM(String.format("removed %s nodes from group %s matching \"%s\"", nodeCount, group.getNodes(), matchedPermission)));
     }
 }
