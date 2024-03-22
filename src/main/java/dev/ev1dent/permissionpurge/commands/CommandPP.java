@@ -49,6 +49,7 @@ public class CommandPP implements CommandExecutor {
 
         if(player == null){
             sender.sendMessage(Utils.formatMM(String.format("<dark_red>Error: <red>Unknown Player \"%s\"", target)));
+            return;
         }
 
         User user = luckPerms.getPlayerAdapter(Player.class).getUser(player);
