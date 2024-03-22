@@ -1,0 +1,13 @@
+name: PermissionPurge
+version: '${project.version}'
+main: dev.ev1dent.permissionpurge.PPMain
+api-version: '1.20'
+commands:
+  pp:
+    usage: /<command> [user|group] <user|group> <permission>
+    aliases:
+      - purgeperms
+      - purge
+      - purgepermissions
+    description: "Purge all permissions LuckPerms User / Group"
+    permission: permissionpurge.purge
