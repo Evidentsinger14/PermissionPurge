@@ -13,12 +13,6 @@ public final class PPMain extends JavaPlugin {
     public void onEnable() {
         this.luckPerms = getServer().getServicesManager().load(LuckPerms.class);
         registerCommands();
-
-    }
-
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
     }
 
     private void registerCommands() {
