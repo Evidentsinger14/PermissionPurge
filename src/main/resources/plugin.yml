@@ -2,6 +2,7 @@ name: PermissionPurge
 version: '${project.version}'
 main: dev.ev1dent.permissionpurge.PPMain
 api-version: '1.20'
+depend: [ LuckPerms ]
 commands:
   pp:
     usage: /<command> [user|group] <user|group> <permission>
