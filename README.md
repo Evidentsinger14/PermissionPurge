@@ -31,8 +31,8 @@ Before installing `PermissionPurge`, ensure you have:
 
 ## Usage
 After installing the plugin, use the following commands in-game or from the server console:
-- `/pp user <user> <permission>` - Purges a permission set from a specific user, starting with your <permission>.
-- `/pp group <luckperms group> <permission>` - Purges a permission set from a LuckPerms group, starting with your <permission>
+- `/pp user <user> <permission>` - Purges a permission set from a specific user, starting with your \<permission>.
+- `/pp group <luckperms group> <permission>` - Purges a permission set from a LuckPerms group, starting with your \<permission>
 
 ## Configuration
 `PermissionPurge` requires no configuration. the only permission provided is `permissionpurge.purge`. this gives access to all commands and arguments. 
