@@ -44,9 +44,7 @@ If you encounter any issues or have suggestions for improvements, please file an
 | Platform | Link                                                                             | Badges                                                                                                                |
 |----------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
 | Modrinth | [Download Link](https://modrinth.com/plugin/permissionpurge/) (Pending Approval) | ![Modrinth Downloads](https://img.shields.io/modrinth/dt/permissionpurge)                                             |
-|
 | Jenkins  | [Download Link](https://ci.ev1dent.dev/job/MetaTokens/)                          | [![Build Status](https://ci.ev1dent.dev/job/PermissionPurge/badge/icon)](https://ci.ev1dent.dev/job/PermissionPurge/) |
-|
 
 ## Contributing
 Contributions to `PermissionPurge` are welcome! If you would like to contribute, please fork the repository and submit a pull request with your changes.
