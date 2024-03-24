@@ -10,5 +10,6 @@ commands:
       - purgeperms
       - purge
       - purgepermissions
+      - permissionpurge
     description: "Purge all matched permissions from a LuckPerms user or group."
     permission: permissionpurge.purge
