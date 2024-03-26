@@ -41,10 +41,10 @@ After installing the plugin, use the following commands in-game or from the serv
 If you encounter any issues or have suggestions for improvements, please file an issue on the [GitHub Issues page](https://github.com/Evidentsinger14/PermissionPurge/issues).
 
 ## Downloads
-| Platform | Link                                                                             | Badges                                                                                                                |
-|----------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
-| Modrinth | [Download Link](https://modrinth.com/plugin/permissionpurge/) (Pending Approval) | ![Modrinth Downloads](https://img.shields.io/modrinth/dt/permissionpurge)                                             |
-| Jenkins  | [Download Link](https://ci.ev1dent.dev/job/MetaTokens/)                          | [![Build Status](https://ci.ev1dent.dev/job/PermissionPurge/badge/icon)](https://ci.ev1dent.dev/job/PermissionPurge/) |
+| Platform | Link                                                                            | Badges                                                                                                                |
+|----------|---------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
+| Modrinth | [Download Link](https://modrinth.com/plugin/permissionpurge/)  | ![Modrinth Downloads](https://img.shields.io/modrinth/dt/permissionpurge)                                             |
+| Jenkins  | [Download Link](https://ci.ev1dent.dev/job/PermissionPurge/)                         | [![Build Status](https://ci.ev1dent.dev/job/PermissionPurge/badge/icon)](https://ci.ev1dent.dev/job/PermissionPurge/) |
 
 ## Contributing
 Contributions to `PermissionPurge` are welcome! If you would like to contribute, please fork the repository and submit a pull request with your changes.
