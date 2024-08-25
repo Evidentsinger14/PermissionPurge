@@ -56,8 +56,8 @@ public class CommandPP implements CommandExecutor {
 
         User user = luckPerms.getPlayerAdapter(Player.class).getUser(player);
         int nodeCount = 0;
-        for (Node node : user.getNodes(NodeType.PERMISSION)) {
-            if (node instanceof PermissionNode && node.getKey().startsWith(matchedPermission)) {
+        for (Node node : user.getNodes()) {
+            if (node.getKey().startsWith(matchedPermission)) {
                 user.data().remove(node);
                 nodeCount++;
                 luckPerms.getUserManager().saveUser(user);
@@ -82,8 +82,8 @@ public class CommandPP implements CommandExecutor {
         }
 
         int nodeCount = 0;
-        for (Node node : group.getNodes(NodeType.PERMISSION)) {
-            if (node instanceof PermissionNode && node.getKey().startsWith(matchedPermission)) {
+        for (Node node : group.getNodes()) {
+            if (node.getKey().startsWith(matchedPermission)) {
                 group.data().remove(node);
                 nodeCount++;
                 luckPerms.getGroupManager().saveGroup(group);
