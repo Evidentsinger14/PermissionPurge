@@ -18,11 +18,11 @@ repositories {
 }
 
 dependencies {
-    compileOnly "io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT"
-    compileOnly 'net.luckperms:api:5.4'
+    compileOnly('io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT')
+    compileOnly('net.luckperms:api:5.4')
 }
 
-def targetJavaVersion = 17
+def targetJavaVersion = 21
 java {
     def javaVersion = JavaVersion.toVersion(targetJavaVersion)
     sourceCompatibility = javaVersion
